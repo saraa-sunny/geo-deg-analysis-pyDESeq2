@@ -9,7 +9,9 @@ This repository contains a Jupyter Notebook for performing **Differential Expres
 * [Usage](#usage)
 * [Workflow](#workflow)
 * [Output](#output)
+* [What I learned](#what-i-learned)
 * [References](#references)
+
 
 ## **Overview**
 
@@ -21,6 +23,7 @@ This project demonstrates a complete workflow to:
 4. Perform differential expression analysis using `pyDESeq2`.
 5. Generate a volcano plot for visualization.
 
+
 ## **Requirements**
 
 * Python 3.8+
@@ -29,6 +32,7 @@ This project demonstrates a complete workflow to:
 ```bash
 pip install GEOparse pandas numpy matplotlib pyDESeq2
 ```
+
 
 ## **Usage**
 
@@ -48,33 +52,29 @@ jupyter notebook GEO_DEG_analysis.ipynb
 3. Update the **GEO ID** in the notebook to your dataset:
 
 ```python
-GSE_ID = "GSEXXXXX"
+gse_id = "GSEXXXXX"
 ```
 
-4. Run all notebook cells step by step. The notebook will:
+4. Run all notebook cells step by step.
 
-* Download the GEO dataset
-* Pivot samples to create an expression matrix
-* Build a cleaned metadata table
-* Perform DEG analysis using pyDESeq2
-* Generate a volcano plot
 
 ## **Workflow**
 
-1. **Download GEO dataset**
+1. **Download GEO dataset**:
    Uses `GEOparse.get_GEO()` to retrieve the GSE series.
 
-2. **Pivot expression data**
+2. **Pivot expression data**:
    Converts all samples into a `genes × samples` DataFrame using `pivot_samples('VALUE')`.
 
-3. **Build metadata table**
+3. **Build metadata table**:
    Extracts sample conditions from `gse.phenotype_data`, cleans the column, and formats it for pyDESeq2.
 
-4. **Run pyDESeq2**
+4. **Run pyDESeq2**:
    Normalizes counts, calculates log2 fold changes, and computes statistical significance for each gene.
 
-5. **Visualize results**
+5. **Visualize results**:
    Generates a volcano plot (`log2FC` vs `-log10(p-value)`) highlighting significant DEGs.
+
 
 ## **Output**
 
@@ -82,6 +82,12 @@ GSE_ID = "GSEXXXXX"
 * `volcano_plot.png` → Volcano plot of differentially expressed genes.
 
   <img width="830" height="489" alt="image" src="https://github.com/user-attachments/assets/6fe2c02b-ba54-41bc-88ee-8b6e76703dd7" />
+
+
+## **What I learned**
+* How to download GEO dataset
+* How to calculate and interpret p-values, adjusted p-values, fold changes and significance levels
+* How to visualize DEGs with volcano plots
 
 
 ## **References**
@@ -93,4 +99,4 @@ GSE_ID = "GSEXXXXX"
 ## **Notes**
 
 * Ensure your GEO dataset is **RNA-seq counts** or compatible microarray data.
-* You can adapt this workflow for any GEO dataset by changing the `GSE_ID` variable.
+* You can adapt this workflow for any GEO dataset by changing the `gse_id` variable.
