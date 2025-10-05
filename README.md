@@ -81,6 +81,9 @@ GSE_ID = "GSEXXXXX"
 * `DEG_results.csv` → Table with log2 fold changes, p-values, and adjusted p-values.
 * `volcano_plot.png` → Volcano plot of differentially expressed genes.
 
+  <img width="830" height="489" alt="image" src="https://github.com/user-attachments/assets/6fe2c02b-ba54-41bc-88ee-8b6e76703dd7" />
+
+
 ## **References**
 
 * [GEOparse GitHub](https://github.com/guma44/GEOparse)
