@@ -27,7 +27,7 @@ This project demonstrates a complete workflow to:
 * Required Python packages:
 
 ```bash
-pip install GEOparse pandas numpy matplotlib pyDESeq2 scipy
+pip install GEOparse pandas numpy matplotlib pyDESeq2
 ```
 
 ## **Usage**
