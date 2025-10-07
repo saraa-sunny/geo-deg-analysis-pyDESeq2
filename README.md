@@ -1,4 +1,4 @@
-# GEO Differential Expression Analysis with pyDESeq2
+# GEO Differential Expression Analysis using Python
 
 This repository contains a Jupyter Notebook for performing **Differential Expression Analysis (DEG)** on GEO datasets using **pyDESeq2** in Python.
 
